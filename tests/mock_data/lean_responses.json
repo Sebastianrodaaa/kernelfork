@@ -1,0 +1,20 @@
+{
+  "by\n  good_tactic\n  ring": {
+    "success": true
+  },
+  "by good_tactic ring": {
+    "success": true
+  },
+  "by fork_a ring": {
+    "success": true
+  },
+  "by fork_b ring": {
+    "success": true
+  },
+  "by fork_c ring": {
+    "success": true
+  },
+  "by t10 t31 t40": {
+    "success": true
+  }
+}

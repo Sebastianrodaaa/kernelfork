@@ -1,0 +1,54 @@
+{
+  "metrics": {
+    "arm": "kernelfork",
+    "group_size": 4,
+    "num_pass_initial": 0.0,
+    "num_pass_after_rescue": 4,
+    "nonzero_advantage_fraction": 0.0,
+    "span_forks": 4,
+    "mock": true
+  },
+  "token_grad_signals": [
+    {
+      "sample": 0,
+      "seq_adv": 0.0,
+      "span_adv": 0.0,
+      "token_adv_sum": 0.0,
+      "span": {
+        "start": 1,
+        "end": 1
+      }
+    },
+    {
+      "sample": 1,
+      "seq_adv": 0.0,
+      "span_adv": 0.0,
+      "token_adv_sum": 0.0,
+      "span": {
+        "start": 1,
+        "end": 1
+      }
+    },
+    {
+      "sample": 2,
+      "seq_adv": 0.0,
+      "span_adv": 0.0,
+      "token_adv_sum": 0.0,
+      "span": {
+        "start": 1,
+        "end": 1
+      }
+    },
+    {
+      "sample": 3,
+      "seq_adv": 0.0,
+      "span_adv": 0.0,
+      "token_adv_sum": 0.0,
+      "span": {
+        "start": 1,
+        "end": 1
+      }
+    }
+  ],
+  "rescued_count": 4.0
+}
