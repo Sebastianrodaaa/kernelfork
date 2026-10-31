@@ -1,0 +1,20 @@
+{
+  "id": "MOCK-minif2f-001",
+  "statement": "theorem mock_add (a b : Nat) : a + b = b + a := by",
+  "vocab": {
+    "<unk>": 1,
+    "by": 10,
+    "WRONG_tactic": 20,
+    "good_tactic": 30,
+    "ring": 40,
+    "fork_a": 31,
+    "fork_b": 32
+  },
+  "candidates": [
+    "by\n  WRONG_tactic\n  ring",
+    "by\n  WRONG_tactic\n  ring",
+    "by\n  WRONG_tactic\n  ring",
+    "by\n  WRONG_tactic\n  ring"
+  ],
+  "notes": "MOCK — all labels in filenames and metrics must say MOCK"
+}
