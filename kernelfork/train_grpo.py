@@ -147,6 +147,7 @@ def run_grpo_step(
     pass_after = sum(1 for s in rescued if s.verify.success)
     nonzero = sum(1 for a in seq_advs if abs(a) > 1e-8) / max(len(seq_advs), 1)
 
+    using_mock = isinstance(client, MockLeanClient)
     metrics = StepMetrics(
         arm=arm,
         group_size=len(group),
@@ -154,7 +155,7 @@ def run_grpo_step(
         num_pass_after_rescue=pass_after,
         nonzero_advantage_fraction=nonzero,
         span_forks=span_forks,
-        mock=True,
+        mock=using_mock,
     )
     detail = {
         "metrics": asdict(metrics),

@@ -1,0 +1,13 @@
+{
+  "id": "real-lean-001",
+  "statement": "theorem kernelfork_true : True := by",
+  "candidates": [
+    "  trivial",
+    "  trivial",
+    "  trivial",
+    "  trivial"
+  ],
+  "fail_proof": "  unknown_tactic_kernelfork",
+  "pass_proof": "  trivial",
+  "notes": "REAL Lean 4 via CliLeanClient — not MOCK"
+}

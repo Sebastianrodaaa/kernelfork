@@ -8,7 +8,11 @@ lint:
 	ruff format --check kernelfork baselines scripts tests
 
 test:
-	pytest -q
+	pytest -q -m "not lean"
+
+test-real:
+	@command -v lean >/dev/null 2>&1 || { echo "Install Lean 4 (elan)"; exit 1; }
+	pytest -q -m real
 
 PYTHON ?= python3
 

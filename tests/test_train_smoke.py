@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from kernelfork.fork import ForkConfig
 from kernelfork.lean_client import MockLeanClient
 from kernelfork.models.tiny import TinyStandInPolicy
@@ -8,6 +10,8 @@ from kernelfork.spans import CharTokenizer
 from kernelfork.train_grpo import run_grpo_step
 
 FIXTURE = Path("tests/mock_data/problem.json")
+
+pytestmark = pytest.mark.mock
 
 
 def test_kernelfork_step_rescues_mock_group():

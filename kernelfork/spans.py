@@ -4,6 +4,12 @@ from __future__ import annotations
 
 from kernelfork.types import LeanErrorSpan, TokenSpan
 
+__all__ = [
+    "CharTokenizer",
+    "WholeProofTokenizer",
+    "random_span_of_length",
+]
+
 
 class CharTokenizer:
     """Simple whitespace/punctuation tokenizer for MOCK pipelines."""
@@ -48,6 +54,30 @@ class CharTokenizer:
         if end_tok is None:
             end_tok = len(tokens) - 1
         return TokenSpan(start_tok, end_tok)
+
+
+class WholeProofTokenizer:
+    """Maps entire proof strings to single token ids (for real Lean integration tests)."""
+
+    def __init__(self) -> None:
+        self._to_id: dict[str, int] = {}
+        self._next = 10
+        self._char = CharTokenizer()
+
+    def encode(self, text: str) -> list[int]:
+        if text not in self._to_id:
+            self._to_id[text] = self._next
+            self._next += 1
+        return [self._to_id[text]]
+
+    def decode(self, ids: list[int]) -> str:
+        inv = {v: k for k, v in self._to_id.items()}
+        return inv.get(ids[0], "")
+
+    def char_to_token_span(self, text: str, error: LeanErrorSpan) -> TokenSpan:
+        if len(self.encode(text)) == 1:
+            return TokenSpan(0, 0)
+        return self._char.char_to_token_span(text, error)
 
 
 def random_span_of_length(num_tokens: int, length: int, rng) -> TokenSpan:

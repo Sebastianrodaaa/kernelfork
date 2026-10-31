@@ -33,6 +33,8 @@ include = ["kernelfork*", "baselines*"]
 testpaths = ["tests"]
 markers = [
   "lean: requires Lean 4 REPL (skipped in CI when unavailable)",
+  "mock: uses MockLeanClient and tests/mock_data fixtures",
+  "real: invokes real Lean 4 via CliLeanClient (no MOCK)",
 ]
 
 [tool.ruff]

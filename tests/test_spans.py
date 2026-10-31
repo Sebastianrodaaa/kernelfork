@@ -1,6 +1,10 @@
+import pytest
+
 from kernelfork.lean_client import MockLeanClient
 from kernelfork.spans import CharTokenizer
 from kernelfork.types import LeanErrorSpan
+
+pytestmark = pytest.mark.mock
 
 
 def test_char_to_token_span():

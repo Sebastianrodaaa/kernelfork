@@ -1,8 +1,12 @@
+import pytest
+
 from kernelfork.fork import ForkConfig, fork_failed_sample, kernel_located_span
 from kernelfork.lean_client import MockLeanClient
 from kernelfork.models.tiny import TinyStandInPolicy
 from kernelfork.spans import CharTokenizer
 from kernelfork.types import RolloutSample, VerifyResult
+
+pytestmark = pytest.mark.mock
 
 
 def test_kernel_fork_produces_passing_fill():

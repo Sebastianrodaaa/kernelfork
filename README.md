@@ -49,8 +49,9 @@ git clone https://github.com/Sebastianrodaaa/kernelfork.git
 cd kernelfork
 pip install -e ".[dev]"
 
-make test    # pytest on CPU (MOCK)
-make smoke   # one RL step → results/MOCK/smoke_step.json
+make test       # pytest (MOCK fixtures; skips @pytest.mark.lean)
+make test-real  # real Lean 4 via `CliLeanClient` (requires elan)
+make smoke      # one RL step → results/MOCK/smoke_step.json
 make demo    # regenerate docs/demo.gif (MOCK)
 ```
 
